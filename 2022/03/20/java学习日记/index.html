@@ -20,7 +20,7 @@
   <meta content="出其东门" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650698211646" as="style">
+  <link rel="preload" href="/css/style.css?time=1650698724615" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1758,8 +1758,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650698211646" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650698211646"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650698724615" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650698724615"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1836,9 +1836,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1650698211646","sites":"/js/plugins/sites.js?time=1650698211646","friends":"/js/plugins/friends.js?time=1650698211646","parallax":"/js/plugins/parallax.js?time=1650698211646","rightMenu":"/js/plugins/rightMenu.js?time=1650698211646","contributors":"/js/plugins/contributors.js?time=1650698211646","message":"/js/thirdparty/message.js?time=1650698211646","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1650698211646","search":"/js/search/hexo.js?time=1650698211646"},"css":{"style":"/css/style.css?time=1650698211646","message":"/css/message.css?time=1650698211646"}},
+    cdn: {"js":{"app":"/js/app.js?time=1650698724615","sites":"/js/plugins/sites.js?time=1650698724615","friends":"/js/plugins/friends.js?time=1650698724615","parallax":"/js/plugins/parallax.js?time=1650698724615","rightMenu":"/js/plugins/rightMenu.js?time=1650698724615","contributors":"/js/plugins/contributors.js?time=1650698724615","message":"/js/thirdparty/message.js?time=1650698724615","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1650698724615","search":"/js/search/hexo.js?time=1650698724615"},"css":{"style":"/css/style.css?time=1650698724615","message":"/css/message.css?time=1650698724615"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Sat Apr 23 2022 15:16:51 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Sat Apr 23 2022 15:25:24 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2467,6 +2467,54 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="title">出其东门</p>
     
     
+
+  <!-- 加入动态彩色字体 -->
+<!-- 封面滚动字体 -->
+<div id="binft"></div> 
+<script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["春风倚棹阖闾城，水国春寒阴复晴。", "人生若只如初见，何事秋风悲画扇。","十年生死两茫茫，不思量，自难忘。", "曾经沧海难为水，除却巫山不是云。","洛中何郁郁，冠带自相索。","只愿君心似我心，定不负相思意。","岸柳垂金线，雨晴莺百啭。","颠狂柳絮随风去，轻薄桃花逐水流。","千里黄云白日曛，北风吹雁雪纷纷。","客槎曾犯，银河波浪，尚带天风海雨。","细雨斜风作晓寒，淡烟疏柳媚晴滩。"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
+
+    <!-- 动态彩色字体结束 -->
+
   </div>
   <div class='bottom'>
     
@@ -2509,6 +2557,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               <p>源码</p>
             </a>
           
+        
+
         
       </div>
     </div>
@@ -3038,7 +3088,7 @@ style的位置应该在head里
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1650698211646.js"></script>
+<script src="/js/app.js?time=1650698724615.js"></script>
 
 
 
@@ -3239,7 +3289,7 @@ style的位置应该在head里
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1650698211646')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1650698724615')</script>
 
 
 
@@ -3368,19 +3418,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650698211646")
+        volantis.js("/js/plugins/sites.js?time=1650698724615")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650698211646")
+        volantis.js("/js/plugins/friends.js?time=1650698724615")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650698211646")
+        volantis.js("/js/plugins/contributors.js?time=1650698724615")
       }
     
   };
@@ -3449,7 +3499,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("/libs/meting/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1650698211648')
+    await volantis.js('/js/plugins/aplayer.js?time=1650698724618')
   
   })();
 
@@ -3551,7 +3601,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650698211646");
+    return volantis.js("/js/search/hexo.js?time=1650698724615");
   }
 
   function loadSearchService() {
@@ -3829,7 +3879,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://w.wallhaven.cc/full/wq/wallhaven-wqve97.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://w.wallhaven.cc/full/e7/wallhaven-e7ek7k.jpg","https://w.wallhaven.cc/full/pk/wallhaven-pkw6y3.jpg"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://w.wallhaven.cc/full/pk/wallhaven-pkw6y3.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3872,7 +3922,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1650698211646').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1650698724615').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
