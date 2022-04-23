@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeImage()
+        {
+            Element=document.getElementById("myimage")
+            if(Element.src.match("bulboff"))
+            {
+                Element.src="https://www.runoob.com/images/pic_bulbon.gif"
+            }
+            else{
+                Element.src="https://www.runoob.com/images/pic_bulboff.gif"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>等待开发中(狗头保命)</h1>
+    <h2>点击点亮下方灯泡</h2>
+    <img src="https://www.runoob.com/images/pic_bulboff.gif" alt="灯泡" id="myimage" onclick="changeImage()">
+</body>
+</html>
