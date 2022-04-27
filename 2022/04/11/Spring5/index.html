@@ -20,13 +20,13 @@
   <meta content="出其东门" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650891177376" as="style">
+  <link rel="preload" href="/css/style.css?time=1651072474259" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>Spring5 - 出其东门</title>
-  <meta name="keywords" content="spring,null">
+  <meta name="keywords" content="学习笔记,null">
   <meta name="description" content="IOC什么是IOC 控制反转，把对象创建和对象之间的调用过程，交给Spring进行管理 使用IOC的目的：降低耦合度   IOC 底层原理 xml解析，工厂模式，反射IOC过程  第一步 xml配置文件，配置创建的对象     &lt;bean id&#x3D;&quot;user&quot; class&#x3D;&quot;com.wht.User&quot;&gt;&lt;&#x2F;bean&gt;  第二部 有ser">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring5">
@@ -36,9 +36,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://110.42.136.235/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-11T01:11:02.000Z">
-<meta property="article:modified_time" content="2022-04-23T02:52:04.436Z">
+<meta property="article:modified_time" content="2022-04-26T03:17:52.861Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="spring">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://110.42.136.235/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1759,8 +1759,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650891177376" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650891177376"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651072474259" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651072474259"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1837,9 +1837,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1650891177376","sites":"/js/plugins/sites.js?time=1650891177376","friends":"/js/plugins/friends.js?time=1650891177376","parallax":"/js/plugins/parallax.js?time=1650891177376","rightMenu":"/js/plugins/rightMenu.js?time=1650891177376","contributors":"/js/plugins/contributors.js?time=1650891177376","message":"/js/thirdparty/message.js?time=1650891177376","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1650891177376","search":"/js/search/hexo.js?time=1650891177376"},"css":{"style":"/css/style.css?time=1650891177376","message":"/css/message.css?time=1650891177376"}},
+    cdn: {"js":{"app":"/js/app.js?time=1651072474259","sites":"/js/plugins/sites.js?time=1651072474259","friends":"/js/plugins/friends.js?time=1651072474259","parallax":"/js/plugins/parallax.js?time=1651072474259","rightMenu":"/js/plugins/rightMenu.js?time=1651072474259","contributors":"/js/plugins/contributors.js?time=1651072474259","message":"/js/thirdparty/message.js?time=1651072474259","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651072474259","search":"/js/search/hexo.js?time=1651072474259"},"css":{"style":"/css/style.css?time=1651072474259","message":"/css/message.css?time=1651072474259"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Mon Apr 25 2022 20:52:57 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Wed Apr 27 2022 23:14:34 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2517,7 +2517,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
     <!-- 动态彩色字体结束 -->
 
-  </div>
+    
+
   <div class='bottom'>
     
       <div class="m_search">
@@ -2566,6 +2567,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </div>
   </div>
 </div>
+
 
         <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
@@ -2700,7 +2702,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><p>Spring注入属性</p>
 <h3 id="Bean-管理操作的两种方式"><a href="#Bean-管理操作的两种方式" class="headerlink" title="Bean 管理操作的两种方式"></a>Bean 管理操作的两种方式</h3></li>
-<li><p><strong>xml创建对象</strong><br>  <img src="img/../../../public/img/../../themes/volantis/source/img/012.png" class="lazyload" data-srcset="img/../../../public/img/../../themes/volantis/source/img/012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<li><p><strong>xml创建对象</strong><br>  <img src="/img/../../../public/img/../../themes/volantis/source/img/012.png" class="lazyload" data-srcset="/img/../../../public/img/../../themes/volantis/source/img/012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>默认执行无参构造函数</p>
 <p>id属性：唯一标识</p>
 <p>class属性：类全路径</p>
@@ -2712,8 +2714,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>2.使用有参构造</p>
 <p>DI：IOC的一种方法，依赖注入，就是注入属性</p>
 <p>第一种注入方式：使用set方法</p>
-<p><img src="img/../../../themes/volantis/source/img/Spring-test1.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>第二种注入方式：使用有参构造<br><img src="img/../../../themes/volantis/source/img/Spring-test2.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="/img/../../../themes/volantis/source/img/Spring-test1.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>第二种注入方式：使用有参构造<br><img src="/img/../../../themes/volantis/source/img/Spring-test2.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <hr>
 <ul>
 <li><p>注入空值</p>
@@ -2802,7 +2804,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <ul>
 <li>提取list集合类型属性注入</li>
 </ul>
-<p>第一步 在xml中使用util<br><img src="img/../../../themes/volantis/source/img/Spring-test3.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>第一步 在xml中使用util<br><img src="/img/../../../themes/volantis/source/img/Spring-test3.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>第二步 提取list集合</p>
 <pre><code>&lt;util:list id=&quot;booklist&quot;&gt;
     &lt;value&gt;list-1&lt;/value&gt;
@@ -2887,7 +2889,7 @@ public Object postProcessAfterInitialization(Object bean, String beanName) throw
 <p>通过name属性自动装配，其中要装配的对象（划水部门）的name必须和bean内对应的属性name一致才可以</p>
 </li>
 </ul>
-<p><img src="img/../../../themes/volantis/source/img/Spring-test4.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="/img/../../../themes/volantis/source/img/Spring-test4.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <ul>
 <li>根据属性内容装配byType</li>
 </ul>
@@ -2911,7 +2913,7 @@ prop.url=jdbc:mysql://localhost:3306/users
 prop.username=root
 prop.password=password
 </code></pre>
-<p>第三步：在xml文件中引入context<br><img src="img/../../../themes/volantis/source/img/Spring-test5.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>第四步：引入外部属性文件</p>
+<p>第三步：在xml文件中引入context<br><img src="/img/../../../themes/volantis/source/img/Spring-test5.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>第四步：引入外部属性文件</p>
 <pre><code>&lt;!--引入外部属性文件--&gt;
     &lt;context:property-placeholder location=&quot;jdbc.properties&quot;&gt;&lt;/context:property-placeholder&gt;
     &lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;&gt;
@@ -2934,7 +2936,7 @@ prop.password=password
 <pre><code>  &lt;context:component-scan base-package=&quot;com.wht&quot;&gt;&lt;/context:component-scan&gt;
 </code></pre>
 <p>第三步：开始使用注解创建对象</p>
-<p><img src="img/../../../themes/volantis/source/img/Spring-test5.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Spring-test5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="/img/../../../themes/volantis/source/img/Spring-test5.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Spring-test5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>在xml中可以配置哪些扫描哪些不扫描</p>
 <hr>
 </div><h2 id="注解方式注入属性"><a href="#注解方式注入属性" class="headerlink" title="注解方式注入属性"></a>注解方式注入属性</h2><div class="story post-story"><ul>
@@ -3056,7 +3058,7 @@ private  String test;
         &lt;!--    开启Aspect生成代理对象--&gt;
         &lt;aop:aspectj-autoproxy&gt;&lt;/aop:aspectj-autoproxy&gt;
 </code></pre>
-<p>第二部：在增强类和被增强类中分别加入注解<br><img src="img/../../../themes/volantis/source/img/Aop-1.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Aop-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="img/../../../themes/volantis/source/img/Aop-2.png" class="lazyload" data-srcset="img/../../../themes/volantis/source/img/Aop-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><strong>其他通知</strong></p>
+<p>第二部：在增强类和被增强类中分别加入注解<br><img src="/img/../../../themes/volantis/source/img/Aop-1.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Aop-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="/img/../../../themes/volantis/source/img/Aop-2.png" class="lazyload" data-srcset="/img/../../../themes/volantis/source/img/Aop-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><strong>其他通知</strong></p>
 <pre><code>  //前置通知
   @Before(value = &quot;execution(* com.wht.pojo.User.add(..))&quot;)
   public void before()&#123;
@@ -3368,10 +3370,10 @@ public class TxConfig &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-23T10:52:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-26T11:17:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 23, 2022</p>
+    <p>更新于：Apr 26, 2022</p>
   </a>
 </div>
 
@@ -3380,8 +3382,8 @@ public class TxConfig &#123;
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/spring/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>spring</p></a></div>
-  <span hidden itemprop="keywords">spring</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div>
+  <span hidden itemprop="keywords">学习笔记</span>
 
 
         
@@ -3666,6 +3668,7 @@ Tomcat 服务器是一个免费的开放源代码的Web应用服务器，属于�
     <!-- Custom Files footer begin-->
     
     <!-- Custom Files footer end-->
+    
   </footer>
 
 
@@ -3699,7 +3702,7 @@ Tomcat 服务器是一个免费的开放源代码的Web应用服务器，属于�
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1650891177376.js"></script>
+<script src="/js/app.js?time=1651072474259.js"></script>
 
 
 
@@ -3900,7 +3903,7 @@ Tomcat 服务器是一个免费的开放源代码的Web应用服务器，属于�
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1650891177376')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1651072474259')</script>
 
 
 
@@ -4029,19 +4032,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650891177376")
+        volantis.js("/js/plugins/sites.js?time=1651072474259")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650891177376")
+        volantis.js("/js/plugins/friends.js?time=1651072474259")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650891177376")
+        volantis.js("/js/plugins/contributors.js?time=1651072474259")
       }
     
   };
@@ -4110,7 +4113,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("/libs/meting/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1650891177379')
+    await volantis.js('/js/plugins/aplayer.js?time=1651072474262')
   
   })();
 
@@ -4212,7 +4215,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650891177376");
+    return volantis.js("/js/search/hexo.js?time=1651072474259");
   }
 
   function loadSearchService() {
@@ -4494,7 +4497,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4537,7 +4540,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1650891177376').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1651072474259').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4771,7 +4774,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/spring/","name":"spring"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/11/Spring5/","name":"Spring5"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Spring5","description":"","datePublished":"2022-04-11T01:11:02.000Z","dateModified":"2022-04-23T02:52:04.436Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/11/Spring5/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/11/Spring5/","wordCount":0,"articleSection":"spring","keywords":"spring","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/spring/","name":"spring"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/11/Spring5/","name":"Spring5"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Spring5","description":"","datePublished":"2022-04-11T01:11:02.000Z","dateModified":"2022-04-26T03:17:52.861Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/11/Spring5/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/11/Spring5/","wordCount":0,"articleSection":"spring","keywords":"学习笔记","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
