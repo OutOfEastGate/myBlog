@@ -20,7 +20,7 @@
   <meta content="出其东门" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1651072474230" as="style">
+  <link rel="preload" href="/css/style.css?time=1651136641563" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://110.42.136.235/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-27T13:25:52.000Z">
-<meta property="article:modified_time" content="2022-04-27T13:55:29.750Z">
+<meta property="article:modified_time" content="2022-04-28T01:44:39.534Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="安全框架">
 <meta name="twitter:card" content="summary">
@@ -1759,8 +1759,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1651072474230" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1651072474230"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651136641563" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651136641563"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1837,9 +1837,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1651072474230","sites":"/js/plugins/sites.js?time=1651072474230","friends":"/js/plugins/friends.js?time=1651072474230","parallax":"/js/plugins/parallax.js?time=1651072474230","rightMenu":"/js/plugins/rightMenu.js?time=1651072474230","contributors":"/js/plugins/contributors.js?time=1651072474230","message":"/js/thirdparty/message.js?time=1651072474230","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651072474230","search":"/js/search/hexo.js?time=1651072474230"},"css":{"style":"/css/style.css?time=1651072474230","message":"/css/message.css?time=1651072474230"}},
+    cdn: {"js":{"app":"/js/app.js?time=1651136641563","sites":"/js/plugins/sites.js?time=1651136641563","friends":"/js/plugins/friends.js?time=1651136641563","parallax":"/js/plugins/parallax.js?time=1651136641563","rightMenu":"/js/plugins/rightMenu.js?time=1651136641563","contributors":"/js/plugins/contributors.js?time=1651136641563","message":"/js/thirdparty/message.js?time=1651136641563","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651136641563","search":"/js/search/hexo.js?time=1651136641563"},"css":{"style":"/css/style.css?time=1651136641563","message":"/css/message.css?time=1651136641563"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Wed Apr 27 2022 23:14:34 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Thu Apr 28 2022 17:04:01 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2619,6 +2619,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/">安全框架</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" itemprop="url"><span itemprop="name">安全框架</span></a>
+      </span>
+    
+  </div>
+
 
           
         
@@ -2663,8 +2673,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>SecurityManager 管理所有用户</p>
 <p>Realm 连接数据</p>
 <h2 id="第一步-引入依赖"><a href="#第一步-引入依赖" class="headerlink" title="第一步 引入依赖"></a>第一步 引入依赖</h2><div class="story post-story"><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--        shiro整合spring的包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.shiro<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>shiro-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</div><h2 id="第二步-写配置shiro的类"><a href="#第二步-写配置shiro的类" class="headerlink" title="第二步 写配置shiro的类"></a>第二步 写配置shiro的类</h2><div class="story post-story"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserRealm</span> <span class="keyword">extends</span> <span class="title class_">AuthorizingRealm</span> &#123;</span><br><span class="line">    <span class="comment">//授权</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> AuthorizationInfo <span class="title function_">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行授权方法=&gt;&quot;</span>+<span class="string">&quot;doGetAuthorizationInfo&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> AuthenticationInfo <span class="title function_">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken authenticationToken)</span> <span class="keyword">throws</span> AuthenticationException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行认证方法=&gt;&quot;</span>+<span class="string">&quot;doGetAuthenticationInfo&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ShiroConfig</span> &#123;</span><br><span class="line">    <span class="comment">//ShiroFilterFactoryBean第三步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ShiroFilterFactoryBean <span class="title function_">getShiroFilterFactoryBean</span><span class="params">(<span class="meta">@Qualifier(&quot;securityManager&quot;)</span> DefaultWebSecurityManager defaultWebSecurityManager)</span>&#123;</span><br><span class="line">        <span class="type">ShiroFilterFactoryBean</span> <span class="variable">shiroFilterFactoryBean</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ShiroFilterFactoryBean</span>();</span><br><span class="line">        <span class="comment">//关联defaultWebSecurityManager，设置安全管理器</span></span><br><span class="line">        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        anno:无需认证就可以访问</span></span><br><span class="line"><span class="comment">        authc:必须认证了才能访问</span></span><br><span class="line"><span class="comment">        user：必须拥有记住我才能访问</span></span><br><span class="line"><span class="comment">        perms：拥有对某个资源的权限才能访问</span></span><br><span class="line"><span class="comment">        role：拥有某个角色属性才能访问</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Map&lt;String,String&gt; filterChainDefinitionMap = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;&gt;();</span><br><span class="line">        filterChainDefinitionMap.put(<span class="string">&quot;/user/add&quot;</span>,<span class="string">&quot;authc&quot;</span>);</span><br><span class="line">        filterChainDefinitionMap.put(<span class="string">&quot;/user/update&quot;</span>,<span class="string">&quot;authc&quot;</span>);</span><br><span class="line">        <span class="comment">//filterChainDefinitionMap.put(&quot;/user/*&quot;,&quot;authc&quot;);</span></span><br><span class="line">        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);</span><br><span class="line">        <span class="comment">//设置登录的请求</span></span><br><span class="line">        shiroFilterFactoryBean.setLoginUrl(<span class="string">&quot;/toLogin&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> shiroFilterFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//DefaultWebSecurityManager  第二步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(name=&quot;securityManager&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> DefaultWebSecurityManager <span class="title function_">getDefaultWebSecurityManager</span><span class="params">(<span class="meta">@Qualifier(&quot;userRealm&quot;)</span> UserRealm userRealm)</span>&#123;</span><br><span class="line">        <span class="type">DefaultWebSecurityManager</span> <span class="variable">defaultWebSecurityManager</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultWebSecurityManager</span>();</span><br><span class="line">        <span class="comment">//关联UserRealm</span></span><br><span class="line">        defaultWebSecurityManager.setRealm(userRealm);</span><br><span class="line">        <span class="keyword">return</span> defaultWebSecurityManager;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建Realm对象 需要自定义  第一步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span>  UserRealm <span class="title function_">userRealm</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">UserRealm</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div><h2 id="第二步-写配置shiro的类"><a href="#第二步-写配置shiro的类" class="headerlink" title="第二步 写配置shiro的类"></a>第二步 写配置shiro的类</h2><div class="story post-story"><p>认证和授权</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserRealm</span> <span class="keyword">extends</span> <span class="title class_">AuthorizingRealm</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    UserService userService;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    UserMapper userMapper;</span><br><span class="line">    <span class="comment">//授权</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> AuthorizationInfo <span class="title function_">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行授权方法=&gt;&quot;</span>+<span class="string">&quot;doGetAuthorizationInfo&quot;</span>);</span><br><span class="line">        <span class="comment">//simpleAuthorizationInfo</span></span><br><span class="line">        <span class="type">SimpleAuthorizationInfo</span> <span class="variable">simpleAuthorizationInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleAuthorizationInfo</span>();</span><br><span class="line">        <span class="comment">//simpleAuthorizationInfo.addStringPermission(&quot;user:update&quot;);</span></span><br><span class="line">        <span class="comment">//获取当前登录对象</span></span><br><span class="line">        <span class="type">Subject</span> <span class="variable">subject</span> <span class="operator">=</span> SecurityUtils.getSubject();</span><br><span class="line">        <span class="type">User</span> <span class="variable">currentUser</span> <span class="operator">=</span> (User) subject.getPrincipal();</span><br><span class="line">        <span class="comment">//查询当前用户是否有权限</span></span><br><span class="line">        simpleAuthorizationInfo.addStringPermission(currentUser.getPerm());</span><br><span class="line">        <span class="keyword">return</span> simpleAuthorizationInfo;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> AuthenticationInfo <span class="title function_">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken authenticationToken)</span> <span class="keyword">throws</span> AuthenticationException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行认证方法=&gt;&quot;</span>+<span class="string">&quot;doGetAuthenticationInfo&quot;</span>);</span><br><span class="line">        <span class="comment">//用户名和密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;123456&quot;</span>;</span><br><span class="line">        QueryWrapper&lt;User&gt; queryWrapper = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;&gt;();</span><br><span class="line">        queryWrapper.eq(<span class="string">&quot;username&quot;</span>,<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">        List&lt;User&gt; users = userMapper.selectList(queryWrapper);</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> users.get(<span class="number">0</span>);</span><br><span class="line">        username=user.getUsername();</span><br><span class="line">        password=user.getPassword();</span><br><span class="line">        <span class="type">UsernamePasswordToken</span> <span class="variable">userToken</span> <span class="operator">=</span> (UsernamePasswordToken) authenticationToken;</span><br><span class="line">        <span class="keyword">if</span>(!userToken.getUsername().equals(username))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;<span class="comment">//会自动抛出异常</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//密码认证shiro会自动做</span></span><br><span class="line">        <span class="comment">//可以加密：MD5 MD5盐值加密</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SimpleAuthenticationInfo</span>(user,password,<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ShiroConfig</span> &#123;</span><br><span class="line">    <span class="comment">//ShiroFilterFactoryBean第三步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ShiroFilterFactoryBean <span class="title function_">getShiroFilterFactoryBean</span><span class="params">(<span class="meta">@Qualifier(&quot;securityManager&quot;)</span> DefaultWebSecurityManager defaultWebSecurityManager)</span>&#123;</span><br><span class="line">        <span class="type">ShiroFilterFactoryBean</span> <span class="variable">shiroFilterFactoryBean</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ShiroFilterFactoryBean</span>();</span><br><span class="line">        <span class="comment">//关联defaultWebSecurityManager，设置安全管理器</span></span><br><span class="line">        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        anno:无需认证就可以访问</span></span><br><span class="line"><span class="comment">        authc:必须认证了才能访问</span></span><br><span class="line"><span class="comment">        user：必须拥有记住我才能访问</span></span><br><span class="line"><span class="comment">        perms：拥有对某个资源的权限才能访问</span></span><br><span class="line"><span class="comment">        role：拥有某个角色属性才能访问</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Map&lt;String,String&gt; filterChainDefinitionMap = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;&gt;();</span><br><span class="line">        filterChainDefinitionMap.put(<span class="string">&quot;/user/add&quot;</span>,<span class="string">&quot;perms[user:add]&quot;</span>);</span><br><span class="line">        filterChainDefinitionMap.put(<span class="string">&quot;/user/update&quot;</span>,<span class="string">&quot;perms[user:update]&quot;</span>);</span><br><span class="line">        <span class="comment">//filterChainDefinitionMap.put(&quot;/user/*&quot;,&quot;authc&quot;);</span></span><br><span class="line">        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);</span><br><span class="line">        <span class="comment">//设置登录的请求</span></span><br><span class="line">        shiroFilterFactoryBean.setLoginUrl(<span class="string">&quot;/toLogin&quot;</span>);</span><br><span class="line">        shiroFilterFactoryBean.setUnauthorizedUrl(<span class="string">&quot;/unAuthor&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> shiroFilterFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//DefaultWebSecurityManager  第二步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(name=&quot;securityManager&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> DefaultWebSecurityManager <span class="title function_">getDefaultWebSecurityManager</span><span class="params">(<span class="meta">@Qualifier(&quot;userRealm&quot;)</span> UserRealm userRealm)</span>&#123;</span><br><span class="line">        <span class="type">DefaultWebSecurityManager</span> <span class="variable">defaultWebSecurityManager</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultWebSecurityManager</span>();</span><br><span class="line">        <span class="comment">//关联UserRealm</span></span><br><span class="line">        defaultWebSecurityManager.setRealm(userRealm);</span><br><span class="line">        <span class="keyword">return</span> defaultWebSecurityManager;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建Realm对象 需要自定义  第一步</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span>  UserRealm <span class="title function_">userRealm</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">UserRealm</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div>
   </div>
@@ -2701,10 +2713,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-27T21:55:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-28T09:44:39+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 27, 2022</p>
+    <p>更新于：Apr 28, 2022</p>
   </a>
 </div>
 
@@ -2784,10 +2796,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2022/04/28/jwt/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>jwt</p>
+          <p class='content'>JWT介绍JWT与shiroshiro和JWT是典型的有状态登陆和无状态登陆的代表，所谓的有状态和无状态，就是看信息存在哪儿，存在服务器端，就叫做有状态，存在客户端，就叫无状态。
+有状态就是说把...</p>
+        </a>
+      
       
         <a class='next' href='/2022/04/27/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/'>
           <p class='title'>依赖管理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>123456789&lt;!-- thymeleaf模板 --&gt;&lt;dependency&gt;            &lt;groupId&gt;org.thymeleaf&lt;...</p>
+          <p class='content'>解决跨域问题1234567891011121314151617/** * 解决跨域问题 */@Configurationpublic class CorsConfig implements We...</p>
         </a>
       
     </div>
@@ -3022,7 +3040,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1651072474230.js"></script>
+<script src="/js/app.js?time=1651136641563.js"></script>
 
 
 
@@ -3223,7 +3241,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1651072474230')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1651136641563')</script>
 
 
 
@@ -3352,19 +3370,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1651072474230")
+        volantis.js("/js/plugins/sites.js?time=1651136641563")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1651072474230")
+        volantis.js("/js/plugins/friends.js?time=1651136641563")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1651072474230")
+        volantis.js("/js/plugins/contributors.js?time=1651136641563")
       }
     
   };
@@ -3433,7 +3451,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("/libs/meting/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1651072474234')
+    await volantis.js('/js/plugins/aplayer.js?time=1651136641565')
   
   })();
 
@@ -3535,7 +3553,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1651072474230");
+    return volantis.js("/js/search/hexo.js?time=1651136641563");
   }
 
   function loadSearchService() {
@@ -3817,7 +3835,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp"];
+  let imgs = ["https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3860,7 +3878,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1651072474230').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1651136641563').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4094,7 +4112,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/27/shiro/","name":"shiro"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"shiro","description":"","datePublished":"2022-04-27T13:25:52.000Z","dateModified":"2022-04-27T13:55:29.750Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/27/shiro/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/27/shiro/","wordCount":0,"keywords":"安全框架","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/安全框架/","name":"安全框架"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/27/shiro/","name":"shiro"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"shiro","description":"","datePublished":"2022-04-27T13:25:52.000Z","dateModified":"2022-04-28T01:44:39.534Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/27/shiro/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/27/shiro/","wordCount":0,"articleSection":"安全框架","keywords":"安全框架","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
@@ -4113,29 +4131,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 <script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script>
-
-
-<!-- 样式位于：source/css/_plugins/pjaxanimate.styl -->
-
-<div class="pjax-animate">
-  
-    <script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
-	<script>
-		volantis.pjax.push(window.HideLoading,'HideLoading');
-		volantis.pjax.send(window.ShowLoading,'ShowLoading');
-		volantis.pjax.error(window.HideLoading,'HideLoading');
-	</script>
-</div>
 
 
 <script>
