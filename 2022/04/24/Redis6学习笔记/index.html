@@ -20,7 +20,7 @@
   <meta content="出其东门" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1651136776219" as="style">
+  <link rel="preload" href="/css/style.css?time=1651156368033" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://110.42.136.235/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-24T12:58:53.000Z">
-<meta property="article:modified_time" content="2022-04-28T09:05:23.121Z">
+<meta property="article:modified_time" content="2022-04-28T14:13:54.612Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -1759,8 +1759,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1651136776219" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1651136776219"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651156368033" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651156368033"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1837,9 +1837,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1651136776219","sites":"/js/plugins/sites.js?time=1651136776218","friends":"/js/plugins/friends.js?time=1651136776218","parallax":"/js/plugins/parallax.js?time=1651136776218","rightMenu":"/js/plugins/rightMenu.js?time=1651136776219","contributors":"/js/plugins/contributors.js?time=1651136776219","message":"/js/thirdparty/message.js?time=1651136776219","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651136776219","search":"/js/search/hexo.js?time=1651136776219"},"css":{"style":"/css/style.css?time=1651136776219","message":"/css/message.css?time=1651136776218"}},
+    cdn: {"js":{"app":"/js/app.js?time=1651156368033","sites":"/js/plugins/sites.js?time=1651156368032","friends":"/js/plugins/friends.js?time=1651156368032","parallax":"/js/plugins/parallax.js?time=1651156368032","rightMenu":"/js/plugins/rightMenu.js?time=1651156368032","contributors":"/js/plugins/contributors.js?time=1651156368032","message":"/js/thirdparty/message.js?time=1651156368032","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651156368032","search":"/js/search/hexo.js?time=1651156368033"},"css":{"style":"/css/style.css?time=1651156368033","message":"/css/message.css?time=1651156368032"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Thu Apr 28 2022 17:06:16 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Thu Apr 28 2022 22:32:48 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2730,7 +2730,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>给某个key值加上过期时间和查看剩余时间</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set name wht</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; expire name 10</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; ttl name</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; ttl name</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379</span><br></pre></td></tr></table></figure>
 
-<p>清空当前库的全部key值</p>
+<p>查看当前key的类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;age&quot;</span><br><span class="line">2) &quot;name&quot;</span><br><span class="line">127.0.0.1:6379&gt; type age</span><br><span class="line">string</span><br><span class="line">127.0.0.1:6379&gt; type name</span><br><span class="line">string</span><br></pre></td></tr></table></figure>
+
+<p>清空当库的全部key值</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; flushdb</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">(empty array)</span><br></pre></td></tr></table></figure>
 
 <p>清除所有数据库</p>
@@ -2748,14 +2751,136 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="为什么单线程还这么快"><a href="#为什么单线程还这么快" class="headerlink" title="为什么单线程还这么快"></a>为什么单线程还这么快</h3><p>Redis所示c语言写的，官方数据，100000+QPS</p>
 <p>核心：Redis将所有数据都放在内存中，所以使用单线程去操作是效率最高的</p>
 <p>多线程上下文切换是个耗时的操作</p>
-<h1 id="Redis五大基本数据"><a href="#Redis五大基本数据" class="headerlink" title="Redis五大基本数据"></a>Redis五大基本数据</h1><hr>
-</div><h2 id="Redis-key"><a href="#Redis-key" class="headerlink" title="Redis-key"></a>Redis-key</h2><div class="story post-story"><img src="Redis6学习笔记\001.png" class="lazyload" data-srcset="Redis6学习笔记\001.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="zoom: 25%;" >
+<h1 id="Redis五大基本数据"><a href="#Redis五大基本数据" class="headerlink" title="Redis五大基本数据"></a>Redis五大基本数据</h1></div><h2 id="String字符串"><a href="#String字符串" class="headerlink" title="String字符串"></a>String字符串</h2><div class="story post-story"><p>给key值追加字段 append</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set name wht</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; append name wht2</span><br><span class="line">(integer) 7</span><br></pre></td></tr></table></figure>
 
+<p>查看当前key值得长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get name</span><br><span class="line">&quot;whtwht2&quot;</span><br><span class="line">127.0.0.1:6379&gt; STRLEN name</span><br><span class="line">(integer) 7</span><br></pre></td></tr></table></figure>
 
+<p>加一减一操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get view</span><br><span class="line">&quot;0&quot;</span><br><span class="line">127.0.0.1:6379&gt; incr view</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get view </span><br><span class="line">&quot;1&quot;</span><br><span class="line">127.0.0.1:6379&gt; decr view </span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; get view </span><br><span class="line">&quot;0&quot;</span><br></pre></td></tr></table></figure>
 
+<p>连续增加和连续减少</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get view </span><br><span class="line">&quot;0&quot;</span><br><span class="line">127.0.0.1:6379&gt; INCRBY view 10</span><br><span class="line">(integer) 10</span><br><span class="line">127.0.0.1:6379&gt; DECRBY view 5</span><br><span class="line">(integer) 5</span><br></pre></td></tr></table></figure>
 
+<p>获取某个区间的字符(如果是0到-1表示获取全部字符串)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get name</span><br><span class="line">&quot;whttttttt&quot;</span><br><span class="line">127.0.0.1:6379&gt; GETRANGE name 0 3</span><br><span class="line">&quot;whtt&quot;</span><br></pre></td></tr></table></figure>
 
+<p><strong>setex(set with expire)</strong>  设置key3的值为hello 30秒后过期 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setex key3 30 &quot;hello&quot;</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; ttl key3</span><br><span class="line">(integer) 21</span><br></pre></td></tr></table></figure>
 
+<p><strong>setnx (set if not exist)</strong> 不存在则设置，在分布式锁中常用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setnx name &quot;wht2&quot;</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; get name</span><br><span class="line">&quot;whttttttt&quot;#还是原来的值，因为已经存在，所以创建失败</span><br></pre></td></tr></table></figure>
+
+<p><strong>mset</strong> 批量创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; mset k1 v1 k2 v2 k3 v3</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;k2&quot;</span><br><span class="line">2) &quot;k1&quot;</span><br><span class="line">3) &quot;k3&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>mget</strong> 批量获取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; mget k1 k2 k3</span><br><span class="line">1) &quot;v1&quot;</span><br><span class="line">2) &quot;v2&quot;</span><br><span class="line">3) &quot;v3&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>msetnx</strong> 如果不存在则批量创建(遵循原子性原则)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; msetnx k1 v1 k2 v2 k4 v4</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;k2&quot;</span><br><span class="line">2) &quot;k1&quot;</span><br><span class="line">3) &quot;k3	#因为k1 和k2存在，所以k4没有创建成功</span><br></pre></td></tr></table></figure>
+
+<p>设置一个json字符串保存数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set user1:1&#123;name:zhangsan,age:3&#125;</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; get user1:1</span><br><span class="line">&quot;&#123;name:zhangsan,age:3&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>user:{id}:{filed} </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; mset user2:1:name wht user2:1:age 18</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; mget user2:1:name user2:1:age</span><br><span class="line">1) &quot;wht&quot;</span><br><span class="line">2) &quot;18&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>getset</strong> 先get再set，如果不存在则创建,返回的是当前get的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; GETSET db redis</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; get db</span><br><span class="line">&quot;redis&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>字符串时应用场景最多的地方，不仅可以是字符串，还可以是数字</p>
+</blockquote>
+</div><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><div class="story post-story"><p>所有list命令都是l开头的</p>
+<p><strong>LPUSH  LRANGE</strong>  list作为堆栈使用，先进后出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LPUSH list one</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; LPUSH list two</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; LPUSH list three</span><br><span class="line">(integer) 3</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br><span class="line">3) &quot;one&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>RPUSH LPUSH</strong> list作为队列使用,可以从左边或者右边插入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; RPUSH list right</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br><span class="line">3) &quot;one&quot;</span><br><span class="line">4) &quot;right&quot;</span><br><span class="line">127.0.0.1:6379&gt; LPUSH list left</span><br><span class="line">(integer) 5</span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;left&quot;</span><br><span class="line">2) &quot;three&quot;</span><br><span class="line">3) &quot;two&quot;</span><br><span class="line">4) &quot;one&quot;</span><br><span class="line">5) &quot;right&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>LPOP RPOP</strong> 出栈</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LPOP list</span><br><span class="line">&quot;left&quot;</span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br><span class="line">3) &quot;one&quot;</span><br><span class="line">4) &quot;right&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>LINDEX</strong> 通过索引获取元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LINDEX list 0</span><br><span class="line">&quot;three&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>LLEN</strong>获取list长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LLEN list</span><br><span class="line">(integer) 4</span><br></pre></td></tr></table></figure>
+
+<p><strong>LREM</strong> 移除指定元素，可以指定数量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;three&quot;</span><br><span class="line">3) &quot;two&quot;</span><br><span class="line">4) &quot;right&quot;</span><br><span class="line">127.0.0.1:6379&gt; LREM list 2 three</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; lrange list 0 -1</span><br><span class="line">1) &quot;two&quot;</span><br><span class="line">2) &quot;right&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ltrim</strong> 截取指定list</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;three&quot;</span><br><span class="line">3) &quot;two&quot;</span><br><span class="line">4) &quot;right&quot;</span><br><span class="line">127.0.0.1:6379&gt; ltrim list 1 2</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1 #list已经被改变了</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>RPOPLPUSH</strong> 移除列表最后一个元素，移入新的lsit</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; RPOPLPUSH list newlist</span><br><span class="line">&quot;two&quot;</span><br><span class="line">127.0.0.1:6379&gt; LRANGE newlist 0 -1</span><br><span class="line">1) &quot;two&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>LINSERT</strong> +before 和after  在指定字段后面或者前面插入新的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; LINSERT list before &quot;three&quot; new </span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; LINSERT list after three new2</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; LRANGE list 0 -1</span><br><span class="line">1) &quot;new&quot;</span><br><span class="line">2) &quot;three&quot;</span><br><span class="line">3) &quot;new2&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用场景 ：消息队列，栈</p>
+</blockquote>
+</div><h2 id="set（集合）"><a href="#set（集合）" class="headerlink" title="set（集合）"></a>set（集合）</h2><div class="story post-story"><p>set集合的命令都是以s开头的</p>
+<blockquote>
+<p><strong>集合是不能重复的</strong>,且<strong>无序</strong></p>
+</blockquote>
+<p>插入<strong>sadd</strong> 和查询<strong>smembers</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; sadd myset hello</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd myset wht</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd myset wht2</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line">1) &quot;wht&quot;</span><br><span class="line">2) &quot;hello&quot;</span><br><span class="line">3) &quot;wht2&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>sismember</strong>判断某一个元素是不是在集合中’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sismember myset wht</span><br></pre></td></tr></table></figure>
+
+<p><strong>scard</strong> 查看当前集合中有多少个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SCARD myset</span><br><span class="line">(integer) 3</span><br></pre></td></tr></table></figure>
+
+<p><strong>srem</strong>(remove)从当前集合中移除某个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SREM myset hello</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>srandmember</strong>随机抽取一个集合的元素(类似抽奖)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; srandmember myset</span><br><span class="line">&quot;wht2&quot;</span><br><span class="line">127.0.0.1:6379&gt; srandmember myset</span><br><span class="line">&quot;wht&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>spop</strong> 随机删除一个集合中的元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spop myset</span><br></pre></td></tr></table></figure>
+
+<p><strong>smove</strong>将制定元素移动到另外一个集合中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; smove myset myset2  wht7 </span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; smembers myset2</span><br><span class="line">1) &quot;bbb&quot;</span><br><span class="line">2) &quot;aaa&quot;</span><br><span class="line">3) &quot;wht7&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>sdiff</strong>求差集   <strong>sinter</strong>求交集    <strong>sunion</strong>求并集</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; smembers myset2</span><br><span class="line">1) &quot;bbb&quot;</span><br><span class="line">2) &quot;aaa&quot;</span><br><span class="line">3) &quot;wht7&quot;</span><br><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line">1) &quot;wht8&quot;</span><br><span class="line">2) &quot;aaa&quot;</span><br><span class="line">127.0.0.1:6379&gt; SDIFF myset myset2</span><br><span class="line">1) &quot;wht8&quot;</span><br><span class="line">127.0.0.1:6379&gt; sinter myset myset2</span><br><span class="line">1) &quot;aaa&quot;</span><br><span class="line">127.0.0.1:6379&gt; SUNION myset myset2</span><br><span class="line">1) &quot;bbb&quot;</span><br><span class="line">2) &quot;wht8&quot;</span><br><span class="line">3) &quot;aaa&quot;</span><br><span class="line">4) &quot;wht7&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>交集可以做共同好友，共同关注，可能认识的人等功能</p>
+</blockquote>
+</div><h2 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h2><div class="story post-story"><p>Map集合，key-value集合，这时候是map集合</p>
+<p>所有hash命令都已h开头！</p>
+<p><strong>hset</strong> 加入值 ，<strong>hget</strong>取值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset myhash field1 wht1</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hget myhash field1</span><br><span class="line">&quot;wht1&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>hmset</strong>加入多个值， <strong>mget</strong>获取多个值,  <strong>hgetall</strong>获取所有数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hmset myhash field1 hello1 field2 hello2</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; hmget myhash field1 field2</span><br><span class="line">1) &quot;wht1&quot;</span><br><span class="line">2) &quot;hello2&quot;</span><br><span class="line">127.0.0.1:6379&gt; hgetall myhash</span><br><span class="line">1) &quot;field1&quot;</span><br><span class="line">2) &quot;hello1&quot;</span><br><span class="line">5) &quot;field2&quot;</span><br><span class="line">6) &quot;hello2&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>设置值若有重复值则会覆盖原来的值</p>
+</blockquote>
+<p><strong>hdel</strong>删除指定的key字段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdel myhash filed1</span><br></pre></td></tr></table></figure>
+
+<p><strong>hlen</strong>获取hash表的字段长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hlen myhash</span><br><span class="line">(integer) 2</span><br></pre></td></tr></table></figure>
+
+<p><strong>exists</strong>当前键是否存在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; exists myhash field1</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>hinceby</strong>给指定值增加指定值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset myhash field3 5</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hincrby myhash field3 2</span><br><span class="line">(integer) 7</span><br></pre></td></tr></table></figure>
+
+<p><strong>hsetnx</strong> 如果不存在则创建，否则创建失败</p>
+<p>设置键值对的方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset user:1 name wht</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hget user:1 name</span><br><span class="line">&quot;wht&quot;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2797,7 +2922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-28T17:05:23+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-28T22:13:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Apr 28, 2022</p>
@@ -2942,7 +3067,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNoSQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">什么是NoSQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL不适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">Redis的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B-%E5%A4%9A%E8%B7%AFIO%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">Redis是单线程+多路IO复用技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-%E4%BD%BF%E7%94%A8-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">Redis 使用 Windows下使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-linux%E4%B8%8B%E4%BD%BF%E7%94%A8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis linux下使用(常用命令)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-text">为什么单线程还这么快</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-key"><span class="toc-text">Redis-key</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNoSQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">什么是NoSQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL不适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">Redis的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B-%E5%A4%9A%E8%B7%AFIO%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">Redis是单线程+多路IO复用技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-%E4%BD%BF%E7%94%A8-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">Redis 使用 Windows下使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-linux%E4%B8%8B%E4%BD%BF%E7%94%A8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis linux下使用(常用命令)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-text">为什么单线程还这么快</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">String字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89"><span class="toc-text">set（集合）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%EF%BC%88%E5%93%88%E5%B8%8C%EF%BC%89"><span class="toc-text">Hash（哈希）</span></a></li></ol>
     </div>
   </section>
 
@@ -3126,7 +3251,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1651136776219.js"></script>
+<script src="/js/app.js?time=1651156368033.js"></script>
 
 
 
@@ -3327,7 +3452,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1651136776219')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1651156368032')</script>
 
 
 
@@ -3456,19 +3581,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1651136776218")
+        volantis.js("/js/plugins/sites.js?time=1651156368032")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1651136776218")
+        volantis.js("/js/plugins/friends.js?time=1651156368032")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1651136776219")
+        volantis.js("/js/plugins/contributors.js?time=1651156368032")
       }
     
   };
@@ -3537,7 +3662,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("/libs/meting/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1651136776221')
+    await volantis.js('/js/plugins/aplayer.js?time=1651156368035')
   
   })();
 
@@ -3639,7 +3764,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1651136776219");
+    return volantis.js("/js/search/hexo.js?time=1651156368033");
   }
 
   function loadSearchService() {
@@ -3921,7 +4046,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3964,7 +4089,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1651136776218').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1651156368032').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4198,7 +4323,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/Redis/","name":"Redis"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/24/Redis6学习笔记/","name":"Redis6学习笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis6学习笔记","description":"","datePublished":"2022-04-24T12:58:53.000Z","dateModified":"2022-04-28T09:05:23.121Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":0,"articleSection":"Redis","keywords":"学习笔记","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/Redis/","name":"Redis"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/24/Redis6学习笔记/","name":"Redis6学习笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis6学习笔记","description":"","datePublished":"2022-04-24T12:58:53.000Z","dateModified":"2022-04-28T14:13:54.612Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":0,"articleSection":"Redis","keywords":"学习笔记","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
