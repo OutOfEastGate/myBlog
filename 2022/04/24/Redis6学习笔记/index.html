@@ -20,7 +20,7 @@
   <meta content="出其东门" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1651156368033" as="style">
+  <link rel="preload" href="/css/style.css?time=1651330686452" as="style">
   <link rel="preload" href="/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://110.42.136.235/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-24T12:58:53.000Z">
-<meta property="article:modified_time" content="2022-04-28T14:13:54.612Z">
+<meta property="article:modified_time" content="2022-04-30T14:37:45.878Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -1759,8 +1759,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1651156368033" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1651156368033"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651330686452" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651330686452"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1837,9 +1837,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1651156368033","sites":"/js/plugins/sites.js?time=1651156368032","friends":"/js/plugins/friends.js?time=1651156368032","parallax":"/js/plugins/parallax.js?time=1651156368032","rightMenu":"/js/plugins/rightMenu.js?time=1651156368032","contributors":"/js/plugins/contributors.js?time=1651156368032","message":"/js/thirdparty/message.js?time=1651156368032","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651156368032","search":"/js/search/hexo.js?time=1651156368033"},"css":{"style":"/css/style.css?time=1651156368033","message":"/css/message.css?time=1651156368032"}},
+    cdn: {"js":{"app":"/js/app.js?time=1651330686452","sites":"/js/plugins/sites.js?time=1651330686452","friends":"/js/plugins/friends.js?time=1651330686452","parallax":"/js/plugins/parallax.js?time=1651330686452","rightMenu":"/js/plugins/rightMenu.js?time=1651330686452","contributors":"/js/plugins/contributors.js?time=1651330686452","message":"/js/thirdparty/message.js?time=1651330686452","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1651330686452","search":"/js/search/hexo.js?time=1651330686452"},"css":{"style":"/css/style.css?time=1651330686452","message":"/css/message.css?time=1651330686452"}},
     default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date('Thu Apr 28 2022 22:32:48 GMT+0800 (中国标准时间)'),
+    lastupdate: new Date('Sat Apr 30 2022 22:58:06 GMT+0800 (中国标准时间)'),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2882,10 +2882,87 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>设置键值对的方式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset user:1 name wht</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hget user:1 name</span><br><span class="line">&quot;wht&quot;</span><br></pre></td></tr></table></figure>
 
+</div><h2 id="Zset有序集合"><a href="#Zset有序集合" class="headerlink" title="Zset有序集合"></a>Zset有序集合</h2><div class="story post-story"><p><strong>zadd</strong>添加 ，<strong>zrange</strong> 查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zadd myset 1 one</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd myset 2 two 3 three</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; zrange myset 0 -1</span><br><span class="line">1) &quot;one&quot;</span><br><span class="line">2) &quot;two&quot;</span><br><span class="line">3) &quot;three&quot;</span><br></pre></td></tr></table></figure>
 
+<p><strong>zrangebyscore</strong>按照score从小到大排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrangebyscore myset -inf +inf withscores</span><br><span class="line">1) &quot;one&quot;</span><br><span class="line">2) &quot;1&quot;</span><br><span class="line">3) &quot;two&quot;</span><br><span class="line">4) &quot;2&quot;</span><br><span class="line">5) &quot;three&quot;</span><br><span class="line">6) &quot;3&quot;</span><br></pre></td></tr></table></figure>
 
+<p><strong>ZREVRANGEBYSCORE</strong>按照score从大到小排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; ZREVRANGEBYSCORE myset +inf -inf</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br></pre></td></tr></table></figure>
 
+<p><strong>zrevrange</strong>按照索引从大到小排序 反之rerange是按照索引从小到大排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrevrange myset 0 -1</span><br><span class="line">1) &quot;three&quot;</span><br><span class="line">2) &quot;two&quot;</span><br></pre></td></tr></table></figure>
 
+<p><strong>zrem</strong>移除某个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrem myset one</span><br></pre></td></tr></table></figure>
+
+<p><strong>zcard</strong>获取有序集合中的个数</p>
+<p> <strong>zcount</strong>获取某个区间的个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; ZCOUNT myset 2 3</span><br><span class="line">(integer) 2</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>应用场景：排行榜，班级排序</p>
+</blockquote>
+<h1 id="三种特殊数据类型"><a href="#三种特殊数据类型" class="headerlink" title="三种特殊数据类型"></a>三种特殊数据类型</h1></div><h2 id="geospatial地理位置"><a href="#geospatial地理位置" class="headerlink" title="geospatial地理位置"></a>geospatial地理位置</h2><div class="story post-story"><p>在redis3.2中支持推出地理位置功能，根据经度和纬度</p>
+<p><strong>geoadd</strong>添加地理位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GEOADD china:city 116.40 39.90 beijing</span><br><span class="line">GEOADD china:city 121.47 31.23 shanghai</span><br></pre></td></tr></table></figure>
+
+<p><strong>geopos</strong>获取地理位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; geopos china:city beijing shanghai</span><br><span class="line">1) 1) &quot;116.39999896287918091&quot;</span><br><span class="line">   2) &quot;39.90000009167092543&quot;</span><br><span class="line">2) 1) &quot;121.47000163793563843&quot;</span><br><span class="line">   2) &quot;31.22999903975783553&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>geodist</strong>获取两个位置的距离，单位默认是米，可以在最后指定单位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; geodist china:city beijing shanghai</span><br><span class="line">&quot;1067378.7564&quot;</span><br><span class="line">127.0.0.1:6379&gt; geodist china:city beijing shanghai km</span><br><span class="line">&quot;1067.3788&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>georadius</strong>以给定值为半径，在圆圈内寻找</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; georadius china:city 110 40 1000 km</span><br><span class="line">1) &quot;beijing&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>功能：附近的人</p>
+</blockquote>
+<p><strong>georadiusbymember</strong>以城市为圆心</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; georadiusbymember china:city beijing 1000 km</span><br><span class="line">1) &quot;beijing&quot;</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="Hyperloglog基数"><a href="#Hyperloglog基数" class="headerlink" title="Hyperloglog基数"></a>Hyperloglog基数</h2><div class="story post-story"><p>基数就是不重复元素的个数，比如网站的访问人数，一个人访问一个网站多次是记作一次的</p>
+<p>会有一定的错误率但在可接受范围内</p>
+<p><strong>pfadd</strong>增加 <strong>pfcount</strong>计算基数个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; pfadd mykey a b c d e f</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; pfadd mykey2 a b c d e f g</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; pfcount mykey mykey2</span><br><span class="line">(integer) 7</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果允许容错，则可以使用hyperloglog，否则应该使用集合</p>
+</blockquote>
+</div><h2 id="Bitmaps"><a href="#Bitmaps" class="headerlink" title="Bitmaps"></a>Bitmaps</h2><div class="story post-story"><blockquote>
+<p>位存储 占用内存较少</p>
+</blockquote>
+<blockquote>
+<p>用途：统计用户活跃度，打卡</p>
+</blockquote>
+<p><strong>setbit</strong> 设置状态 <strong>bitcount</strong>查询1的个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setbit sign 0 1</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit sign 1 0</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit sign 2 1</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; bitcount sign</span><br><span class="line">(integer) 2</span><br></pre></td></tr></table></figure>
+
+<h1 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h1><p>redis单条命令是符合原子性的</p>
+<p>但redis的事务是没有原子性和隔离级别的</p>
+<p>所有命令并没有直接被执行，而是发起执行命令时才会被执行</p>
+<p>redis事务</p>
+<ul>
+<li>开启事务</li>
+<li>命令入队</li>
+<li>执行事务</li>
+</ul>
+<p><strong>multi</strong>开启事务，<strong>exec</strong>执行队列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; set k1 v1</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; set k2 v2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; get k1</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; get k2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; EXEC</span><br><span class="line">1) OK</span><br><span class="line">2) OK</span><br><span class="line">3) &quot;v1&quot;</span><br><span class="line">4) &quot;v2&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>discard</strong>放弃事务,队列里的命令并不会执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379(TX)&gt; set k3 v3</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; DISCARD</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get k3</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
+
+<p>事务错误类型</p>
+<blockquote>
+<p>编译型异常 ，代码或命令有问题，事务中的所有命令都不会执行</p>
+<p>运行时出现异常，事务队列中存在语法异常，执行命令时，其他命令可以正常执行，错误命令抛出异常</p>
+</blockquote>
+<h1 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h1></div><h2 id="什么是悲观锁和乐观锁"><a href="#什么是悲观锁和乐观锁" class="headerlink" title="什么是悲观锁和乐观锁"></a>什么是悲观锁和乐观锁</h2><div class="story post-story"><p>悲观锁：认为什么时候都会出问题，无论做什么都会加锁，影响性能</p>
+<p>乐观锁：认为不会出问题，所以不会加锁，更新数据的时候去判断一下，在此期间是否有人修改过这个数据</p>
+<p>watch可以开启监视对象</p>
 
 </div>
   </div>
@@ -2922,10 +2999,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-28T22:13:54+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-30T22:37:45+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 28, 2022</p>
+    <p>更新于：Apr 30, 2022</p>
   </a>
 </div>
 
@@ -3067,7 +3144,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNoSQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">什么是NoSQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL不适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">Redis的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B-%E5%A4%9A%E8%B7%AFIO%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">Redis是单线程+多路IO复用技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-%E4%BD%BF%E7%94%A8-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">Redis 使用 Windows下使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-linux%E4%B8%8B%E4%BD%BF%E7%94%A8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis linux下使用(常用命令)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-text">为什么单线程还这么快</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">String字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89"><span class="toc-text">set（集合）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%EF%BC%88%E5%93%88%E5%B8%8C%EF%BC%89"><span class="toc-text">Hash（哈希）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNoSQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">什么是NoSQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">NoSQL不适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">Redis的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B-%E5%A4%9A%E8%B7%AFIO%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">Redis是单线程+多路IO复用技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-%E4%BD%BF%E7%94%A8-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">Redis 使用 Windows下使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-linux%E4%B8%8B%E4%BD%BF%E7%94%A8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis linux下使用(常用命令)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-text">为什么单线程还这么快</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">String字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89"><span class="toc-text">set（集合）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%EF%BC%88%E5%93%88%E5%B8%8C%EF%BC%89"><span class="toc-text">Hash（哈希）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zset%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="toc-text">Zset有序集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#geospatial%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE"><span class="toc-text">geospatial地理位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hyperloglog%E5%9F%BA%E6%95%B0"><span class="toc-text">Hyperloglog基数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bitmaps"><span class="toc-text">Bitmaps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81"><span class="toc-text">什么是悲观锁和乐观锁</span></a></li></ol>
     </div>
   </section>
 
@@ -3251,7 +3328,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1651156368033.js"></script>
+<script src="/js/app.js?time=1651330686452.js"></script>
 
 
 
@@ -3452,7 +3529,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1651156368032')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1651330686452')</script>
 
 
 
@@ -3581,19 +3658,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1651156368032")
+        volantis.js("/js/plugins/sites.js?time=1651330686452")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1651156368032")
+        volantis.js("/js/plugins/friends.js?time=1651330686452")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1651156368032")
+        volantis.js("/js/plugins/contributors.js?time=1651330686452")
       }
     
   };
@@ -3662,7 +3739,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("/libs/meting/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1651156368035')
+    await volantis.js('/js/plugins/aplayer.js?time=1651330686455')
   
   })();
 
@@ -3764,7 +3841,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1651156368033");
+    return volantis.js("/js/search/hexo.js?time=1651330686452");
   }
 
   function loadSearchService() {
@@ -4046,7 +4123,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://w.wallhaven.cc/full/72/wallhaven-72rxqo.jpg","https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4089,7 +4166,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1651156368032').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1651330686452').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4323,7 +4400,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/Redis/","name":"Redis"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/24/Redis6学习笔记/","name":"Redis6学习笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis6学习笔记","description":"","datePublished":"2022-04-24T12:58:53.000Z","dateModified":"2022-04-28T14:13:54.612Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":0,"articleSection":"Redis","keywords":"学习笔记","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"出其东门","url":"http://110.42.136.235/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://110.42.136.235/","name":"出其东门"}},{"@type":"ListItem","position":2,"item":{"@id":"http://110.42.136.235/categories/Redis/","name":"Redis"}},{"@type":"ListItem","position":3,"item":{"@id":"http://110.42.136.235/2022/04/24/Redis6学习笔记/","name":"Redis6学习笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis6学习笔记","description":"","datePublished":"2022-04-24T12:58:53.000Z","dateModified":"2022-04-30T14:37:45.878Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://110.42.136.235/"},"publisher":{"@type":"Organization","name":"出其东门","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://110.42.136.235/2022/04/24/Redis6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":0,"articleSection":"Redis","keywords":"学习笔记","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
