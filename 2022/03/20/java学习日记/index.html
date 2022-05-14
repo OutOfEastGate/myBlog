@@ -265,13 +265,16 @@ public void testAdd()&#123;
       avatar: 'monsterid',
       serverURLs: '',
       emojiMaps: "",
+      enableQQ: true,
+      tagMeta: ["博主","小伙伴","访客"],
       path: window.location.pathname,
-      visitor: false
+      placeholder: "昵称填写qq可以显示qq头像和昵称哦~",
+      visitor: true
     }, null))
   }
 
   if (typeof Valine === 'function') initValine() 
-  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+  else getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js').then(initValine)
 }
 
 if ('Valine' === 'Valine' || !false) {
