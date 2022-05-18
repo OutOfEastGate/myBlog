@@ -297,7 +297,7 @@
   MathJax.startup.document.state(0)
   MathJax.texReset()
   MathJax.typeset()
-}</script><link rel="stylesheet" type="text/css" href="css/math/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+}</script><link rel="stylesheet" type="text/css" href="js/math/katex.min.js"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
   document.querySelectorAll('#article-container span.katex-display').forEach(item => {
     btf.wrap(item, 'div', { class: 'katex-wrap'})
   })
@@ -321,7 +321,7 @@
   }
 
   if (typeof Valine === 'function') initValine() 
-  else getScript('/js/thirdparty/valine.js').then(initValine)
+  else getScript('/js/thirdparty/valine.min.js').then(initValine)
 }
 
 if ('Valine' === 'Valine' || !false) {
