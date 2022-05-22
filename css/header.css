@@ -1,0 +1,26 @@
+#page-header
+  position: relative
+  width: 100%
+  background-color: $light-blue
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  transition: all .5s
+
+  &:not(.not-top-img):before
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: alpha($dark-black, .3)
+    content: ''
+
+  // index 修改
+  &.full_page
+    height: 410px
+    background-attachment: absolute
+
+    #site-info
+      position: absolute
+      top: 40%
+      padding: 0 10px
+      width: 100%
