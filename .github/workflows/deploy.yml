@@ -79,9 +79,8 @@ jobs:
           npm install
 
       - name: Deploy hexo
-        run: |
-          npm run deploy
-		  
+        run: npm run deploy
+          
       # 以下为发布到gitee
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@master
